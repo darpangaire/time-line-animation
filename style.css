@@ -1,75 +1,127 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-html,body {
+html, body {
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
   overflow: hidden;
+  background: #e0f7fa;
 }
 
 #main {
   height: 100%;
   width: 100%;
-  background-color: lightblue;
   background-image: url("https://images.pexels.com/photos/158163/clouds-cloudporn-weather-lookup-158163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-
   background-position: center;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
+  max-width: 1200px;
   padding: 20px 30px;
   color: #fff;
-
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease-in-out;
 }
 
 #nav i {
   font-size: 30px;
-  font-weight: 800;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#nav i:hover {
+  transform: scale(1.2);
 }
 
 #nav h2 {
   font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 #full {
   height: 100%;
-  width: 40%;
+  width: 50%;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.37);
+  background-color: rgba(255, 255, 255, 0.75);
   top: 0;
-  right: -40%;
-  backdrop-filter: blur(10px);
-  padding: 140px 50px;
-}
-
-#full h4 {
-  font-size: 50px;
-  font-weight: 500;
-  margin-bottom: 10px;
+  right: -50%;
+  backdrop-filter: blur(20px);
+  padding: 80px 50px;
+  box-shadow: -10px 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px 0 0 10px;
+  transition: all 0.4s ease-in-out;
 }
 
 #full i {
   position: absolute;
-  top: 5%;
-  right: 10%;
-  font-size: 20px;
-  font-weight: 800;
-  background-color: white;
+  top: 20px;
+  right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: #fff;
   border-radius: 50%;
-  padding: 5px;
+  padding: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+#full i:hover {
+  background-color: #f44336;
+  transform: rotate(90deg);
+}
 
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
+#full h4 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#full h4:hover {
+  color: #00796b;
+  transform: translateX(10px);
+}
+
+#full h4::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: -5px;
+  left: 0;
+  background-color: #00796b;
+  transition: width 0.3s ease;
+}
+
+#full h4:hover::after {
+  width: 100%;
+}
